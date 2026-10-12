@@ -1,5 +1,5 @@
+#check prime
 import math
-
 def main():
     num=int(input("enter the number to check prime : "))
     if num < 2:
