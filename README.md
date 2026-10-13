@@ -4,3 +4,8 @@
 2. Conditional Statements
 3. Loops
 4. Exceptions
+
+# Day 2
+1. Data Structures - list, set, tuple, dict
+2. Functions - normal, recursion, lamba
+3. Classes and Objects
