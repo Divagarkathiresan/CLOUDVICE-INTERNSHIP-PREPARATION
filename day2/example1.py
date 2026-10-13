@@ -1,29 +1,29 @@
-list=[]
+list1=[]
 s="sdring"
 list2=['d','i','v','a']
 for c in s:
-    list.append(c)
+    list1.append(c)
 
 
-sets=set(list)
+sets=set(list1)
 print(sets)
 
 print(list[0:2])
 
-list[0:2]='d','i'
+list1[0:2]='d','i'
 
-print(list[0:2])
+print(list1[0:2])
 
-print(list)
+print(list1)
 
-list.extend(list2)
-print(list)
+list1.extend(list2)
+print(list1)
 
-tuple=tuple(list)
+tuple=tuple(list1)
 
 print(tuple)
 
-print(list[5:3:-1])
+print(list1[5:3:-1])
 
 # i=len(list)-1
 # while(i>=0):
@@ -59,3 +59,17 @@ print(students)
 
 for rollno in students:
     print(students[rollno])
+
+keys=list(students.keys())
+print(keys)
+
+print(4 in students.keys() )
+
+
+students.pop(1)
+
+students.update(
+    {4:"grapes"}
+)
+
+print(students)
