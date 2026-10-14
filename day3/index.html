@@ -6,13 +6,16 @@
     <title>Day 3 HTML</title>
     <!-- <link rel="stylesheet" href="/day3/index.css"/> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- <script src="https://jquery.com" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> -->
 </head>
 <style>
-    /* div{
-        background-color: rgb(148, 148, 255);
-        display:flex;
-        text-align: center;
+    div{
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
+   
+    /*
     a{
         padding-left: 20px;
         padding-top: 10px;
@@ -90,18 +93,24 @@
     <br>
     
     <form id="form">
-        <label for="email">Email</label>
-        <input type="email" placeholder="enter the email" id="email"/>
-        <br><br>
-
-        <button type="submit" id="submit-btn">submit</button>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" placeholder="enter the email" id="email"/>
+        </div>
+        <div>
+            <label> password</label>
+            <input type="password" placeholder="enter the password" id="password"/>
+        </div>
+        <button type="submit" id="submit-btn" onclick="alert('The button is clicked')">submit</button>
     </form>
+
+    <h1 id="visi-txt">Visible</h1>
+    <button id="toggle-btn">hide</button>
 
 </body>
 
 <script>
-    // let num=0
-    // console.log(num)
+
     function clicked(){
         console.log("Clicked")
     }
@@ -121,7 +130,15 @@
     }
 
     document.getElementById("form").addEventListener("submit",getMail)
+
+
+    //j query
+
+    $("#toggle-btn").click(function(){
+        $("#visi-txt").hide()
+    });
     
 </script>
+
 </html>
 
