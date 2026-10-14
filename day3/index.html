@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <style>
-    div{
+    /* div{
         background-color: rgb(148, 148, 255);
         display:flex;
         text-align: center;
@@ -21,7 +21,7 @@
     h3{
         padding-left: 20px;
         padding:20px
-    }
+    } */
 </style>
 <body>
     <!-- <h1>Hello</h1>
@@ -65,11 +65,63 @@
     <a href="/day3/new.html" target="_blank">
         new tab
     </a> -->
-    <div class="navbar-nav">
+    <!-- <div>
         <h3>navbar</h3>
         <a href="/day3/feature.html" style="text-decoration: none; color: black;" target="_blank">feature</a>
         <a href="/day3/index.html" style="text-decoration: none; color: black;">home</a>
         <a href="/day3/contact.html" style="text-decoration: none; color: black;" target="_blank">contact</a>
     </div>
+
+
+    <form>
+        <input type="text" placeholder="enter the text" id="text"/>
+        <button type="submit" id="btn">submit</button>
+    </form> -->
+
+    <button id="btn"> give message to backend</button>
+    <div>
+        <input type="text" id="txt"/>
+        <button id="print-txt">print text</button>
+    </div>
+
+    <br>
+    <br>
+    <h3>Forms</h3>
+    <br>
+    
+    <form id="form">
+        <label for="email">Email</label>
+        <input type="email" placeholder="enter the email" id="email"/>
+        <br><br>
+
+        <button type="submit" id="submit-btn">submit</button>
+    </form>
+
 </body>
+
+<script>
+    // let num=0
+    // console.log(num)
+    function clicked(){
+        console.log("Clicked")
+    }
+    document.getElementById("btn").addEventListener("click",clicked)
+    
+    const message = document.querySelector("#txt")
+    function printText(){
+        console.log(message.value)
+    }
+    document.getElementById("print-txt").addEventListener("click",printText)
+
+
+    const email = document.querySelector("#email")
+    function getMail(event){
+        event.preventDefault()
+        console.log(email.value)
+    }
+
+    document.getElementById("form").addEventListener("submit",getMail)
+    
+</script>
 </html>
+
