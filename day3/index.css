@@ -22,6 +22,7 @@ ul,ol{
 }
 
 div{
+    text-align: center;
     border: 3px solid;
     border-color: red;
     width:300px;
