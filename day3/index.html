@@ -4,22 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Day 3 HTML</title>
+    <link rel="stylesheet" href="/day3/index.css"/>
 </head>
+<style>
+    button{
+        color: #f30000;
+    }
+</style>
 <body>
     <h1>Hello</h1>
-    <ol type="A">
-        <li>One</li>
-        <li>Two</li>
-        <li>Three</li>
-    </ol>
-   <ul type="square">
-        <li>One</li>
-        <li>Two</li>
-        <li>Three</li>
-    </ul>
+    <div>
+        <ol type="A" class="list">
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+        </ol>
+        <ul type="square" id="list">
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+        </ul>
+    </div>
     <form>
         <label for="mail"> Email : </label>  <input type="email" placeholder="enter the email" id="mail"/>
-        <button type="reset">reset</button>
+        <br>
+        <button type="reset" style="color: rgb(0, 0, 0); background-color: rgb(239, 140, 140);height: 30px;">reset</button>
         <button type="submit">submit</button>
     </form>
     <br>
