@@ -107,10 +107,16 @@
     <h1 id="visi-txt">Visible</h1>
     <button id="toggle-btn">hide</button>
 
+    <h1 id="count-h1"><span id="count">0</span></h1>
+    <button id="count-btn">increase</button>
+
+    <h1 id="ajax-content">Ajax content</h1>
+    <button id="ajax-btn">Tap to see the content</button>
 </body>
 
 <script>
 
+    let count =0
     function clicked(){
         console.log("Clicked")
     }
@@ -132,11 +138,45 @@
     document.getElementById("form").addEventListener("submit",getMail)
 
 
-    //j query
+    
+    const getDetails = function(event){
 
+        event.preventDefault()
+
+        const email1 = document.getElementById("email").value
+        const password = document.getElementById("password").value
+
+        const data = {
+            
+            email : email1,
+            password : password
+        }
+        console.log(data)
+    }
+    document.getElementById("form").addEventListener("submit",getDetails)
+
+
+    const increaseCount=function(){
+        count++
+        document.getElementById("count").textContent=count
+    }
+    document.getElementById("count-btn").addEventListener("click",increaseCount)
+
+    //j query
     $("#toggle-btn").click(function(){
-        $("#visi-txt").hide()
+        $("#visi-txt").toggle();
+
+        if ($("#visi-txt").is(":visible")) {
+            $(this).text("Hide");
+        } else {
+            $(this).text("Show");
+        }
     });
+
+    $('#ajax-btn').click(function(){
+        $("#ajax-content").toggle()
+        $("#ajax-content").load("/day2/assessments/sample.txt")
+    })
     
 </script>
 
