@@ -1,4 +1,4 @@
-# CLOUDVICE-INTERNSHIP-PREPARATION
+ ```This repository is about the daily progress of the intern students at Cloudvice from October 12 2026```
 #  Day 1
 1. Basic of python
 2. Conditional Statements
@@ -14,3 +14,6 @@
 1. HTML, CSS, JS
 2. Ajax
 3. JQuery
+
+# Day 4
+1. 
