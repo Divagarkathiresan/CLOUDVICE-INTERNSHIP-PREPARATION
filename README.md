@@ -1,4 +1,4 @@
- This repository is about the daily progress of the intern students at Cloudvice from October 12 2026
+# This repository is about the daily progress of the intern students at Cloudvice from October 12 2026
 #  Day 1
 1. Basic of python
 2. Conditional Statements
