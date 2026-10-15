@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='homePage.css') }}">
+</head>
+<body>
+    <h1>This is the home page</h1>
+    <h3>User details</h3>
+    <h4>Username : {{userName}}</h4>
+    <h4>Password : {{password}}</h4>
+    <a href="/logout">Logout</a>
+</body>
+</html>
