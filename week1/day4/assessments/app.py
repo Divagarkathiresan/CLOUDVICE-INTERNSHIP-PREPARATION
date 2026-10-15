@@ -12,6 +12,13 @@ def dbConnection():
             password TEXT
         )
     """)
+    connection.execute("""
+            CREATE TABLE IF NOT EXISTS tasks (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                title TEXT,
+                status TEXT
+            )
+        """)
     connection.close()
 
 
@@ -27,10 +34,17 @@ def login():
 
     userName=request.form.get("name")
     password=request.form.get("password")
-    session["userName"]=userName
-    session["password"]=password
+    connection = sqlite3.connect("users.db")
+    user = connection.execute("SELECT name, password FROM users WHERE name = ? AND password = ?",(userName, password)).fetchone()
+    connection.close()
 
-    return redirect(url_for('home'))
+    if user:
+        session["userName"] = user[0]
+        session["password"]=user[1]
+        return redirect(url_for("home"))
+
+    return f"Invalid user, register first"
+
 
 @app.route("/register",methods=["GET","POST"])
 def register():
@@ -50,6 +64,23 @@ def register():
 def logout():
     session.clear()
     return redirect(url_for('home'))
+
+
+@app.route("/add-task",methods=["POST"])
+def addTask():
+    task=request.form.get("task")
+    Connection=sqlite3.connect("users.db")
+    Connection.execute("insert into tasks (title,status) values (?,?)",(task,"PENDING"))
+    Connection.commit()
+    Connection.close()
+    return redirect(url_for('getTasks'))
+
+@app.route("/get-task")
+def getTasks():
+    Connection=sqlite3.connect("users.db")
+    tasks=Connection.execute("select * from tasks").fetchall()
+    return render_template('Tasks.html',tasks=tasks)
+
 
 if __name__=="__main__":
     dbConnection()

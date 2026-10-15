@@ -11,6 +11,12 @@
     <h3>User details</h3>
     <h4>Username : {{userName}}</h4>
     <h4>Password : {{password}}</h4>
+    <h3>Add Tasks : </h3>
+    <form action="{{ url_for('addTask') }}" method="post">
+        <input name="task" type="text" placeholder="enter the task"/>
+        <button type="submit">Add Task</button>
+    </form>
+    <a href="/get-task">Tasks</a>
     <a href="/logout">Logout</a>
 </body>
 </html>

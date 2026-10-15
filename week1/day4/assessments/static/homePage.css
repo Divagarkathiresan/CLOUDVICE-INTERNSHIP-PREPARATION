@@ -18,13 +18,13 @@ h1 {
     text-align: center;
 }
 
-h3 {
+h3{
     color: #334155;
     font-size: 24px;
     margin-bottom: 20px;
 }
 
-h4 {
+h4,input,button,a{
     width: 300px;
     background-color: #ffffff;
     padding: 15px 20px;
