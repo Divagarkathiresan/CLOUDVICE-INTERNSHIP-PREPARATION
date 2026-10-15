@@ -12,3 +12,5 @@
 
 # Day 3
 1. HTML, CSS, JS
+2. Ajax
+3. JQuery
